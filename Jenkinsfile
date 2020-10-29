@@ -5,20 +5,12 @@ pipeline {
         // FOO will be available in entire pipeline
         FOO = "PIPELINE"
     }
-  
-    parameters {
-        booleanParam(name: "RELEASE", defaultValue: false)
-        choice(name: "DEPLOY_TO", choices: ["INT", "PRE", "PROD"])
-        
-    }
     
     stages {
 
-        stage("Build") {
+        stage("API Testing") {
             steps {
-                echo "Running build ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                echo "Job name ${env.JOB_NAME} / workspace ${env.WORKSPACE}"
-                bat 'C:/Users/Stephan/AppData/Roaming/npm/newman run C:/SW/newman/API.json -r htmlextra'
+                bat 'C:/Users/Stephan/AppData/Roaming/npm/newman run C:/SW/newman/TEST_API.json -r htmlextra'
             }
         }
         
