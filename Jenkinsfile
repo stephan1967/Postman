@@ -18,7 +18,7 @@ pipeline {
             steps {
                 echo "Running build ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 echo "Job name ${env.JOB_NAME} / workspace ${env.WORKSPACE}"
-                bat 'C:\Users\Stephan\AppData\Roaming\npm\newman run C:\SW\newman\API.json -r htmlextra'
+                bat 'C:/Users/Stephan/AppData/Roaming/npm/newman run C:/SW/newman/API.json -r htmlextra'
             }
         }
         
